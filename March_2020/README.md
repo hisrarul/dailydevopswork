@@ -32,7 +32,7 @@ Let's assume that the name of the dump file is `demo.sql` which has a database n
 
 I wanted to send the metrics data of an application to the prometheus and grafana.
 
-## Problem Statement
+## Problem statement
 
 The application is generating logs in plain text. To send meaningful data to prometheus and grafana it is important to parse them.
 
@@ -45,7 +45,8 @@ Below is the log content of the application and saved them into **opcron.txt** f
 2020-03-30 06:20:43,012 [INFO ]  [test.py:438] Number of Files successfully uploaded = 0
 2020-03-30 06:20:43,013 [INFO ]  [test.py:909] Number of Files upload failed for = 0
 ```
-Create a shell script to parse these logs and convert them into **JSON** format.
+Create a shell script to parse these logs and convert them into **JSON** format.\
+```cat > generatejson.sh```
 ```
 awk '{print "{\"cron_stats\": { \"completion_time\": \""$1" " $2"\", \"Task\": "}' opcron.txt > file1.txt
 cat opcron.txt | cut -d']' -f3 | cut -d' ' -f2-15 | cut -d'=' -f1 > file2.txt
