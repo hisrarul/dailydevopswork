@@ -22,6 +22,7 @@ We need to create the excel sheet which will contain the name of the bucket and 
 ```
 cat > s3Usage.sh
 ```
+Paste the below content and hit Enter
 ```
 for bucket in $(aws s3 ls --profile default | awk '{print $3}')
 do
