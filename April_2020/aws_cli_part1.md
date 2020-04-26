@@ -141,5 +141,5 @@ aws ec2 run-instances \
     --subnet-id subnet-068631b9d21d9d591
 ```
 #### Prepared by Israrul Haque
-Follow me at @hisrarul \
+Follow me on Twitter: @hisrarul \
 Reserved Copyrights
